@@ -47,3 +47,18 @@ echo "Welcome to User Registration program"
 	fi
 
 
+#----------New Branch UC4--------------------
+
+	echo "Checkig valid mobile number"
+	echo "Enter the Mobile Number "
+
+	read mobileNumber
+	pat_mobile="^[0-9]{2}([[:space:]])([0-9]{8})$"
+
+	if [[ $mobileNumber =~ $pat_mobile ]]
+	then
+		echo "Valid Mobile Number"
+	else
+		echo "Invalid Mobile Number"
+
+	fi
