@@ -38,7 +38,7 @@ echo "Welcome to User Registration program"
 	echo "Enter the email : "
 	read  email
 
-	pat_m="^[a-z.]+@[a-z.]+[a-z.]+"
+	pat_m="^[a-z.]+@[a-z.]+[a-z.]+"  #checks loose type email abc.xyz@bl.co.in only validates small case letters and . Not designed for alphanumerica And uppercase
 	if [[ $email =~ $pat_m ]]
 	then
 		echo "Valid Email"
@@ -53,7 +53,7 @@ echo "Welcome to User Registration program"
 	echo "Enter the Mobile Number "
 
 	read mobileNumber
-	pat_mobile="^[0-9]{2}([[:space:]])([0-9]{8})$"
+	pat_mobile="^[0-9]{2}([[:space:]])([0-9]{8})$"  #checks mobile numer  and validates - 91 898138332 this pattern
 
 	if [[ $mobileNumber =~ $pat_mobile ]]
 	then
@@ -61,4 +61,22 @@ echo "Welcome to User Registration program"
 	else
 		echo "Invalid Mobile Number"
 
+	fi
+
+#-----------New Branch UC5----------------------
+
+	echo "Password Checker"
+	echo "Enter your password"
+	read pass
+
+	pat_pass="[a-bA-B0-9!@#$%^&*()]{8,}"
+
+	# checks for password with only one condition on length > 8 
+
+	if [[ $pass =~ $pat_pass ]]
+
+	then
+		echo "Valid Password"
+	else
+		echo "Invalid Password"
 	fi
