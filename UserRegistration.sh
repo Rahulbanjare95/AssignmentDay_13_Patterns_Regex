@@ -31,3 +31,19 @@ echo "Welcome to User Registration program"
 	else
 		echo  "Invalid LastName"
 	fi
+
+#--------------New Branch Uc3------
+
+	echo "Checking valid email"
+	echo "Enter the email : "
+	read  email
+
+	pat_m="^[a-z.]+@[a-z.]+[a-z.]+"
+	if [[ $email =~ $pat_m ]]
+	then
+		echo "Valid Email"
+	else
+		echo "Invalid Email"
+	fi
+
+
