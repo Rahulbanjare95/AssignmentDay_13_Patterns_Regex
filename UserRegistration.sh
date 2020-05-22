@@ -69,12 +69,24 @@ echo "Welcome to User Registration program"
 	echo "Enter your password"
 	read pass
 
-	pat_pass="[a-bA-B0-9!@#$%^&*()]{8,}"
+	pat_pass="[a-bA-B0-9]{8,}"
 
 	# checks for password with only one condition on length > 8 
 
 	if [[ $pass =~ $pat_pass ]]
 
+	then
+		echo "Valid Password"
+	else
+		echo "Invalid Password"
+	fi
+#------------------New Branch UC 6--------------------
+
+	echo "Checking Special Case Atleast One UpperCase"
+	read s
+	pat_passA="[A-Z]{1,}"
+
+	if [[ $pass =~ $pat_passA ]]
 	then
 		echo "Valid Password"
 	else
