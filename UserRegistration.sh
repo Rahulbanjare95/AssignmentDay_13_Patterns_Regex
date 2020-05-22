@@ -84,11 +84,27 @@ echo "Welcome to User Registration program"
 
 	echo "Checking Special Case Atleast One UpperCase"
 	read s
-	pat_passA="[A-Z]{1,}"
+	pat_passA="^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]{3,})\w{6,13}$"
 
 	if [[ $pass =~ $pat_passA ]]
 	then
 		echo "Valid Password"
 	else
 		echo "Invalid Password"
+	fi
+
+
+#---------------------New Branch----------------------------
+
+	echo "Email Checker All Rules Followed"
+
+	read pattern
+
+	pat_Email="^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-ZA-Z]{2})$"
+
+	if [[ $pattern =~ $pat_Email ]]
+	then
+		echo "Valid Email"
+	else
+		echo "InvalidEmail"
 	fi
